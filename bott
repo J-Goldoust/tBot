@@ -1,0 +1,15 @@
+const { Telegraf } = require('telegraf');
+
+// اینجا توکن رباتت رو بذار
+const bot = new Telegraf('7738983891:AAHBnlOlMcUpNfOhQrAZicdCzmOn1pUNPqg');
+
+bot.start((ctx) => ctx.reply('سلام! خوش اومدی 👋'));
+bot.help((ctx) => ctx.reply('دستوراتی که می‌تونی استفاده کنی: /start /help'));
+bot.on('text', (ctx) => {
+  ctx.reply(`تو گفتی: ${ctx.message.text}`);
+});
+
+bot.launch();
+console.log('ربات راه افتاد ✅');
+
+
